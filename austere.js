@@ -2,12 +2,21 @@
 //This library provides core user interface elements
 
 //the text element
-const Text = (...args) => {
-  let text = document.createElement("p");
-  for (let stl in styles) {
-    text.style[stl] = styles[stl];
+const heading = (text, type) => {
+  let headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  if (type in headings) {
+    let heading = document.createElement(type);
+  } else {
+    return new TypeError("The heading type is not valid");
   }
-  return text;
+};
+const Text = (text, styles) => {
+  let txt = document.createElement("p");
+  txt.innerHTML = text;
+  for (let stl in styles) {
+    txt.style[stl] = styles[stl];
+  }
+  return txt;
 };
 
 //the button element
@@ -35,7 +44,7 @@ const Card = (src, text, styles) => {
   let card = document.createElement("div");
   let img = Image(src, styles.image);
   card.appendChild(img);
-  let paragraph = document.createElement("p");
+  let paragraph = Text(text, styles.text);
   paragraph.innerHTML = text;
   card.appendChild(paragraph);
   for (let stl in styles.card) {
@@ -91,14 +100,3 @@ const Olist = (items, styles) => {
   }
   return list;
 };
-
-// const Item = (text, styles) => {
-//   let item = document.createElement("li");
-//   item.innerHTML = text;
-//   for (let stl in styles) {
-//     item.style[stl] = styles[stl];
-//   }
-//   return item;
-// };
-
-//export default { Text, Button, Card, OList, UList, Item, Image, Card, View };

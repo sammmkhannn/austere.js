@@ -1,8 +1,8 @@
 //A simple UI library based on Vanilla JavaScript
 //This library provides core user interface elements
 
-//the text element
-const heading = (text, type) => {
+//the heading element
+const Heading = (text, type) => {
   let headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
   if (type in headings) {
     let heading = document.createElement(type);
@@ -10,6 +10,8 @@ const heading = (text, type) => {
     return new TypeError("The heading type is not valid");
   }
 };
+
+//the text element
 const Text = (text, styles) => {
   let txt = document.createElement("p");
   txt.innerHTML = text;
@@ -100,3 +102,5 @@ const Olist = (items, styles) => {
   }
   return list;
 };
+
+export default { Heading, Button, Text, View, UList, Olist, Card, Image };

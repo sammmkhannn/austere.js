@@ -1,0 +1,20 @@
+{
+  "name": "austere.js",
+  "version": "1.0.0",
+  "description": "A simple UI library to build beautifull and elegant interfaces. Based on vanilla javaScript",
+  "main": "austere.js",
+  "type": "module",
+  "scripts": {
+    "dev":"vite",
+    "build":"bite build"
+  },
+  "repository": "https://github.com/shoaibur-rehman/austere.js.git",
+  "author": "sam",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.3.5",
+    "postcss": "^8.3.7",
+    "tailwindcss": "^2.2.15",
+    "vite": "^2.5.10"
+  }
+}
